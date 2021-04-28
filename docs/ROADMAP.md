@@ -1,14 +1,14 @@
 # Roadmap
 
-This is a summary for thenew fatures of the major releases and a collection of ideas. 
+This is a summary for thenew fatures of the major releases and a collection of ideas.
 
 This list indicates only the current intention and can be changed.
 
 ## v8
-Planned to September/October 2020
-- Create an `lv_components` repository for compley widgets
+Planned to May 2021
+- Create an `extra` folder for complex widgets
    - It makes the core LVGL leaner
-   - In `lv_components` we can have a lot and specific widgets
+   - In `extra` we can have a lot and specific widgets
    - Good place for contribution
 - New scrolling:
   - See [feat/new-scroll](https://github.com/lvgl/lvgl/tree/feat/new-scroll) branch and  [#1614](https://github.com/lvgl/lvgl/issues/1614)) issue.
@@ -27,33 +27,40 @@ Planned to September/October 2020
 - Simplified File system interface ([feat/new_fs_api](https://github.com/lvgl/lvgl/tree/feat/new-fs-api) branch) to make porting easier
   - Work in progress
 - Remove the align parameter from `lv_canvas_draw_text`
-- Make the `copy` parameter of `create` functions deprecated
+- Remove the copy parameter from create functions
+- Optimize and simplifie styles [#1832](https://github.com/lvgl/lvgl/issues/1832)
+- Use a more generic inheritenace [#1919](https://github.com/lvgl/lvgl/issues/1919)
 
-## v8.1
+## v8.x
 - Add radio button widget
-
-## v9
-- Simplify `group`s. Discussion is [here](https://forum.lvgl.io/t/lv-group-tabindex/2927/3).
 - Unit testing (gtest?). See [#1658](https://github.com/lvgl/lvgl/issues/1658)
 - Benchmarking (gem5?). See [#1660](https://github.com/lvgl/lvgl/issues/1660)
+- chart: pre-delete `X` pint after the lastly set
+- chart: autoscroll to the right
+- `lv_snapshot`: buffer a widget and all of its children into an image. he source widget can be on a different screen too. The result image can be transformed.
+- 9-patch support for `lv_imgbtn`.
+- Handle stride. See [#1858](https://github.com/lvgl/lvgl/issues/1858)
+- Rework animation to something like [GSAP](https://greensock.com/gsap/)
+  - Add scroll trigger inspired by [GSAP scrolltrigger](https://greensock.com/scrolltrigger/) 
+  - Add FLIP inspired by [GSAP FLIP](https://greensock.com/docs/v3/Plugins/Flip/) 
+ 
+## v9
+- Simplify `group`s. Discussion is [here](https://forum.lvgl.io/t/lv-group-tabindex/2927/3).
 - Consider direct binary font format support
-- Remove the copy paramter from create functions
-- Style selectors and style-based states See [#1832](https://github.com/lvgl/lvgl/issues/1832)
-
-## v10
-- Remove property level states
-
+- Optimize line and circle drawing and masking
+- Reconsider color format management for run time color format setting, and custom color format usage. (Also [RGB888](https://github.com/lvgl/lvgl/issues/1722))
+- Switch to RGBA colors in styles
+- Make gradients more versatile
+- Make image transformations more versatile
 
 ## Ideas
-- 9-patch support for `lv_imgbtn`.
+- Use [generate-changelog](https://github.com/lob/generate-changelog) to automatically generate changelog
 - lv_mem_alloc_aligned(size, align)
 - Text node. See [#1701](https://github.com/lvgl/lvgl/issues/1701#issuecomment-699479408)
-- RGB888 support [#1722](https://github.com/lvgl/lvgl/issues/1722)
-- Consider ARGB4444, ARGB1555 format
 - CPP binding. See [Forum](https://forum.lvgl.io/t/is-it-possible-to-officially-support-optional-cpp-api/2736)
-- Optmize font decompression
-- Switch to RGBA colors in styles
+- Optimize font decompression
 - Need coverage report for tests
-- Need static analize (via coverity.io or somehing else)
+- Need static analyze (via coverity.io or somehing else)
 - Support dot_begin and dot_middle long modes for labels
 - Add new label alignment modes. [#1656](https://github.com/lvgl/lvgl/issues/1656)
+- Support larger images: [#1892](https://github.com/lvgl/lvgl/issues/1892)
